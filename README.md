@@ -60,6 +60,28 @@ pip install fawkes
 
 If you don't have root privilege, please try to install on user namespace: `pip install --user fawkes`.
 
+Docker
+------
+
+Fawkes can be executed as a Docker container.
+
+To use Fawkes in a containerized environment, first pull the image from Docker Hub:
+
+```
+docker pull shawn-shan/fawkes
+```
+
+Then run the image by bind mounting the directory which contains the images you wish to cloak:
+
+```
+docker run \
+-it \
+--rm \
+--mount \
+type=bind,source=/my_images,target=/data \
+fawkes
+```
+
 Contribute to Fawkes
 --------------------
 
